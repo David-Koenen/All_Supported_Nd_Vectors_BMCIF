@@ -1,0 +1,125 @@
+# Usage Guide for main.py
+
+## Overview
+
+This document provides detailed instructions on how to use `main.py` to run the different methods on bi-objective minimum cost flow problem instances. The script allows users to:
+
+- Load and run predefined instances from the files in **`instances/`**
+- Create and run new problem.
+- Execute the test scenarios of Example 4.8 (best-case) and 4.9 (wost-case) scenarios.
+
+## Prerequisites
+
+- Ensure you have Python (>=3.8) and all dependencies installed
+
+## Running the Script
+
+The script is executed from the command line using the following format:
+
+```sh
+python src/main.py --method <method_name> [options]
+```
+
+### Methods and Parameters
+
+The `--method` flag is required and determines which function to execute. The following methods are available:
+
+### 1. Running an Instance from a File
+
+Loads a predefined instance from the `instances/` folder and runs the algorithm (inidicating which algorihtms should be used). Additional to the output all results will be saved in Tests_Results.csv in the **`output/`** folder. 
+We will shortly add an improved version to run all instances from a folder in instances
+
+#### Command:
+
+```sh
+python src/main.py --method run_instance_from_file --nodes <NODES> --arcs <ARCS> --number <INSTANCE_NUMBER> [--m1] [--m2] [--m3] [--m4] --output <OUTPUT_FILE>
+```
+
+#### Parameters:
+
+- `--nodes <int>` → Number of nodes in the graph.
+- `--arcs <int>` → Number of arcs in the graph.
+- `--number <int>` → Instance number (used in file naming).
+- `--m1`, `--m2`, `--m3`, `--m4` → Optional flags to enable specific solution methods. 
+- `--m1`: All otimal flow algorithm
+-  `--m2`: All distinct algorithm 
+- `--m3`: epsilon-algorithm 
+- --m4:`: new epsilon-algorithm
+- `--output <file>` → Path to the output file (default: `output/results.txt`).
+
+#### Example:
+
+```sh
+python src/main.py --method run_instance_from_file --nodes 50 --arcs 100 --number 3 --m1 --m2 --output output/results.txt
+```
+-- The instance (instance_new_50_100_3) from the `instances/` folder will be solved using only the two first algorihms. 
+
+### 2. Creating and Running a New Instance
+
+Generates a new problem instance with predefined parameters (as given in the paper) using pygen, and runs the different algorithms.
+We will shortly add an nother mehtod to generate a new problem and run it witouht predefined and chosable parameters for the generation of the network generator by pygen. 
+
+#### Command:
+
+```sh
+python src/main.py --method create_and_run_instance --nodes <NODES> --arcs <ARCS> --seed <SEED> [--m1] [--m2] [--m3] [--m4] --output <OUTPUT_FILE>
+```
+
+#### Parameters:
+
+- `--nodes <int>` → Number of nodes in the graph.
+- `--arcs <int>` → Number of arcs in the graph.
+- `--seed <int>` → Random seed for instance generation.
+- `--m1`, `--m2`, `--m3`, `--m4` → Optional flags to enable specific solution methods.
+- `--output <file>` → Path to the output file (default: `output/results.txt`).
+
+#### Example:
+
+```sh
+python src/main.py --method create_and_run_instance --nodes 50 --arcs 100 --seed 42 --m1 --m2 --m3 --output output/results.txt
+```
+
+### 3. Running Test Instances of Example 4.8
+
+Runs pre-defined test instances based on properties defined in the paper (Example 4.8).
+
+#### Command:
+
+```sh
+python src/main.py --method run_best_tests --output <OUTPUT_FILE>
+```
+
+#### Example:
+
+```sh
+python src/main.py --method run_best_tests --output output/test_best.txt
+```
+
+### 4. Running Worst-Case Test Instances
+
+Runs pre-defined test instances based on properties defined in the paper of Example 4.9.
+
+#### Command:
+
+```sh
+python src/main.py --method run_worst_tests --output <OUTPUT_FILE>
+```
+
+#### Example:
+
+```sh
+nce_from_file(args.nodes, args.arcs, args.numberpython src/main.py --method run_worst_tests --output output/test_worst.txt
+```
+
+## Output
+
+All results are saved to the specified output file. By default, results are stored in `output/results.txt`. Make sure the `output/` folder exists or create it before running the script.
+Also all results will be automatically saved in the Tests_Results.csv
+
+## Notes
+
+- Ensure that the required instance files are available in the `instances/` folder if using `run_instance_from_file`.
+- The random seed ensures reproducibility for generated instances.
+- Use the appropriate flags (`--m1`, `--m2`, `--m3`, `--m4`) to control the alogrithms used in solving the problem.
+
+For any issues, please open an issue on the GitHub repository or contact the maintainers.
