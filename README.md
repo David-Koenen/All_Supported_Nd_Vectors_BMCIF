@@ -19,18 +19,8 @@ The repository contains the following folders:
 - Outputs the number supported nondominated vectors (and extreme supported vectors) and needed time for each of the different methods.
 
 ## Installation & Usage
-### Requirements
-Ensure you have Python installed (>=3.8) and the necessary dependencies
 
-### Running the Algorithm
-To execute the algorithm, use the following command: (To do!)
-
-python src/main.py --input instances/example_instance.txt --output output/results.txt (Verbessern!)
-
-### Example Usage (To do!)
-
-python src/main.py --
-
+You can find a detailed Installation & Usage Guide in usage.txt
 
 ## Citation
 If you use this implementation in your research, please cite:
