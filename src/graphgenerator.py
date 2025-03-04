@@ -199,13 +199,13 @@ def netgen_random_mcfp(number_of_nodes, seed, sources, sinks, density, mincost, 
             secondary_costs.append(s[(u,v)])
         return H,costs,secondary_costs
     except:  
-        print('Instance Error during pygen Network Creation. Try another seed or other values') 
+        print('Instance Error during pygen Network Creation. Try another seed or other values.') 
         return None,None,None
             
     
     
 def netgen_random_mcfp_from_instance(seed,fname,number_of_nodes,number_of_arcs,minsecondcost,maxsecondcost):
-        """
+       """
         Creates an DiGraph with all parameters and second cost function of the instance 
         from the file `tests/fname`. 
         Parameter seed gives the Seed used for the creation of the second cost function.
@@ -215,7 +215,7 @@ def netgen_random_mcfp_from_instance(seed,fname,number_of_nodes,number_of_arcs,m
             DiGraph H, list of edge costs, and list of secondary costs.
         """
         
-        try:
+       try:
             #py.netgen_generate( seed = seed, nodes = number_of_nodes, fname= "instances/"+fname, sources = sources, sinks = sinks, density = density, mincost= mincost, maxcost = maxcost, supply= supply, mincap=mincap, maxcap=maxcap)
         
             G = nx.DiGraph()
@@ -224,8 +224,9 @@ def netgen_random_mcfp_from_instance(seed,fname,number_of_nodes,number_of_arcs,m
         
         
             demands = {node: 0 for node in G.nodes()}
-        
-            datei = open( "instances/"+ number_of_nodes + "_"+ number_of_arcs + "/" +fname,'r')
+            
+            
+            datei = open( "instances/"+ str(number_of_nodes) + "_"+ str(number_of_arcs) + "/" +fname,'r')
           
         
             costs = []
@@ -258,7 +259,7 @@ def netgen_random_mcfp_from_instance(seed,fname,number_of_nodes,number_of_arcs,m
                 costs.append( c[(u,v)] )
                 secondary_costs.append(s[(u,v)])
             return H,costs,secondary_costs
-        except:  
+       except:  
             print('Instance Error during pygen Network Creation. Try another seed or other values') 
             return None,None,None
 

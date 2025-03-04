@@ -175,6 +175,6 @@ def dichotomic_search(G):
    Returns:
    tuple: (List of extreme nondominated vectors, execution time, lambda weights per face)
    """
-    dich = dichotom(G)
-    extreme_vectors, execution_time, lambdas  = dich.dichotomic(G)
-    return extreme_vectors, execution_time, lambdas
+   dich = dichotom(G)
+   extreme_vectors, execution_time, lambdas  = dich.dichotomic(G)
+   return extreme_vectors, execution_time, lambdas

@@ -37,7 +37,7 @@ def run_instance_from_file(nodes,arcs,number,m1,m2,m3,m4):
         name = 'instance_new'+ str(nodes) + '_'+str(arcs)+'_'+str(number)
         G, costs, secondary_costs = netgen_random_mcfp_from_instance(number, name, nodes, arcs, 1, 10) 
         if G != None:
-            find_all_supported(name, G, costs, secondary_costs,  m1, m2, m3, m4, m4, '../tests/Tests_Results.csv')
+            find_all_supported(name, G, costs, secondary_costs,  m1, m2, m3, m4, m4, 'output/Tests_Results.csv')
 
 
 def create_and_run_instance(nodes,arcs,seed,m1,m2,m3,m4):
@@ -60,7 +60,7 @@ def create_and_run_instance(nodes,arcs,seed,m1,m2,m3,m4):
         name = 'instance_'+ str(nodes) + '_'+str(arcs)+'_'+str(seed)
         G, costs, secondary_costs = netgen_random_mcfp(nodes, seed, 2, 2, arcs, 1, 10, 50, 0, 50, name, 1, 10)
         if G != None:
-            find_all_supported(name, G, costs, secondary_costs,  m1, m2, m3, m4, True, 'tests/Tests_Results.csv')
+            find_all_supported(name, G, costs, secondary_costs,  m1, m2, m3, m4, True, 'output/Tests_Results.csv')
     
 
 
@@ -105,5 +105,3 @@ def run_worst_tests():
 
 
 
-       
-                
