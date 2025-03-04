@@ -22,12 +22,12 @@ The repository contains the following folders:
 ### Requirements
 Ensure you have Python installed (>=3.8) and the necessary dependencies
 
-## Running the Algorithm
+### Running the Algorithm
 To execute the algorithm, use the following command: (To do!)
 
 python src/main.py --input instances/example_instance.txt --output output/results.txt (Verbessern!)
 
-## Example Usage (To do!)
+### Example Usage (To do!)
 
 python src/main.py --
 
