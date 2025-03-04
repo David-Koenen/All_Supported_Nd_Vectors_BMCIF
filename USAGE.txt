@@ -10,7 +10,8 @@ This document provides detailed instructions on how to use `main.py` to run the 
 
 ## Prerequisites
 
-- Ensure you have Python (>=3.8) and all dependencies installed
+- Ensure you have Python (>=3.8) and all dependencies installed. 
+- Ensure Gurobi is installed with correct license envoirement path.
 
 ## Running the Script
 
